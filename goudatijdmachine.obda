@@ -1,0 +1,60 @@
+[PrefixDeclaration]
+:		https://www.goudatijdmachine.nl/def#
+o:		http://omeka.org/s/vocabs/o#
+dc:		http://purl.org/dc/elements/1.1/
+hg:		http://rdf.histograph.io/
+oa:		http://www.w3.org/ns/oa#
+bio:		http://purl.org/vocab/bio/0.1/
+ceo:		https://linkeddata.cultureelerfgoed.nl/def/ceo#
+geo:		http://www.opengis.net/ont/geosparql#
+gtm:		https://www.goudatijdmachine.nl/def#
+owl:		http://www.w3.org/2002/07/owl#
+pnv:		https://w3id.org/pnv#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+sem:		http://semanticweb.cs.vu.nl/2009/11/sem/
+wgs:		http://www.w3.org/2003/01/geo/wgs84_pos#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+foaf:		http://xmlns.com/foaf/0.1/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+rico:		https://www.ica.org/standards/RiC/ontology#
+roar:		https://w3id.org/roar#
+skos:		http://www.w3.org/2004/02/skos/core#
+vann:		http://purl.org/vocab/vann/
+dctype:		http://purl.org/dc/dcmitype/
+schema:		https://schema.org/
+dcterms:		http://purl.org/dc/terms/
+curation:	https://omeka.org/s/vocabs/curation/
+o-module-mapping:	http://omeka.org/s/vocabs/module/mapping#
+
+[MappingDeclaration] @collection [[
+mappingId	gtm-Straat-1
+target		<https://www.goudatijdmachine.nl/data/api/items/{id}> a :Straat ; dcterms:identifier {ark} ; owl:sameAs <{uri}> . 
+source		SELECT resource.id, value.value AS ark, CONCAT('https://n2t.net/',value.value) AS uri FROM resource, value WHERE resource.resource_class_id=909 AND resource.id=value.resource_id AND value.property_id=10;
+
+mappingId	gtm-Straat-2
+target		<https://www.goudatijdmachine.nl/data/api/items/{resource_id}> skos:altLabel {value} . 
+source		SELECT resource_id,value  FROM value,resource WHERE resource.id=value.resource_id AND property_id=1109
+
+mappingId	gtm-Straat-3
+target		<https://www.goudatijdmachine.nl/data/api/items/{resource_id}> skos:prefLabel {value} . 
+source		SELECT resource_id,value  FROM value,resource WHERE resource.resource_class_id=909 AND resource.id=value.resource_id AND property_id=1108
+
+mappingId	gtm-Straat-4
+target		<https://www.goudatijdmachine.nl/data/api/items/{resource_id}> schema:identifier {value} . 
+source		SELECT resource_id,value  FROM value,resource WHERE resource.resource_class_id=909 AND resource.id=value.resource_id AND property_id=1082
+
+mappingId	gtm-Straat-5
+target		<https://www.goudatijdmachine.nl/data/api/items/{resource_id}> geo:asWKT {value} . 
+source		SELECT resource_id,value  FROM value,resource WHERE resource.resource_class_id=909 AND resource.id=value.resource_id AND property_id=1162
+
+mappingId	gtm-Mapping-1
+target		<https://www.goudatijdmachine.nl/data/api/mapping_markers/{id}> a o-module-mapping:Marker ; o-module-mapping:lat {lat} ; o-module-mapping:lng {lng} . 
+source		SELECT * FROM `mapping_marker`
+
+mappingId	gtm-Mapping-2
+target		<https://www.goudatijdmachine.nl/data/api/items/{item_id}> o-module-mapping:marker <https://www.goudatijdmachine.nl/data/api/mapping_markers/{id}> . 
+source		SELECT * FROM `mapping_marker`
+]]
+

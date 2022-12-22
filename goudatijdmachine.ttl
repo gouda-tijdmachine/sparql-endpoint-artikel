@@ -1,0 +1,504 @@
+@prefix : <https://www.goudatijdmachine.nl/def#> .
+@prefix o: <http://omeka.org/s/vocabs/o#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hg: <http://rdf.histograph.io/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gtm: <https://www.goudatijdmachine.nl/def#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pnv: <https://w3id.org/pnv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix roar: <https://w3id.org/roar#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix curation: <https://omeka.org/s/vocabs/curation/> .
+@prefix o-module-mapping: <http://omeka.org/s/vocabs/module/mapping#> .
+@base <https://www.goudatijdmachine.nl/def#> .
+
+<https://www.goudatijdmachine.nl/def#> rdf:type owl:Ontology ;
+                                        dcterms:created "2021-11-25"^^xsd:date ;
+                                        dcterms:creator <https://orcid.org/0000-0002-7328-1312> ;
+                                        dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                        dcterms:modified "2022-11-01"^^xsd:date ;
+                                        dcterms:publisher <https://n2t.net/ark:/60537/by6gvD> ;
+                                        vann:preferredNamespacePrefix "gtm" ;
+                                        rdfs:comment "De Gouda Tijdmachine ontologie beschrijft de klasses en eigenschappen die gebruikt worden binnen de Gouda Tijdmachine." ;
+                                        rdfs:label "Gouda Tijdmachine Ontologie" ;
+                                        schema:creator [ rdf:type schema:Person ;
+                                                         schema:name "Bob Coret"@en ;
+                                                         schema:affiliation <https://n2t.net/ark:/60537/by6gvD> ;
+                                                         schema:identifier <https://orcid.org/0000-0002-7328-1312>
+                                                       ] ;
+                                        schema:publisher [ rdf:type schema:Organization ;
+                                                           schema:description "Een tijdmachine die de bebouwing van de historische binnenstad van Gouda onderzoekt, digitaal vastlegt en prachtig weergeeft. De Gouda Tijdmachine is een initatief van historische vereniging Die Goude en Streekarchief Midden-Holland." ;
+                                                           schema:name "Gouda Tijdmachine" ;
+                                                           schema:alternateName "GTM" ;
+                                                           schema:identifier <https://n2t.net/ark:/60537/by6gvD> ;
+                                                           schema:url <https://www.goudatijdmachine.nl>
+                                                         ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://omeka.org/s/vocabs/o#property_id
+o:property_id rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/affiliation
+schema:affiliation rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/alternateName
+schema:alternateName rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/creator
+schema:creator rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/publisher
+schema:publisher rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+schema:url rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://omeka.org/s/vocabs/module/mapping#marker
+o-module-mapping:marker rdf:type owl:ObjectProperty .
+
+
+###  http://rdf.histograph.io/absorbed
+hg:absorbed rdf:type owl:ObjectProperty ;
+            o:property_id 1225 ;
+            rdfs:label "Absorbed" .
+
+
+###  http://rdf.histograph.io/absorbedBy
+hg:absorbedBy rdf:type owl:ObjectProperty ;
+              o:property_id 1226 ;
+              rdfs:label "Absorbed by" .
+
+
+###  http://rdf.histograph.io/liesIn
+hg:liesIn rdf:type owl:ObjectProperty ;
+          o:property_id 1230 ;
+          rdfs:label "Ligt in" .
+
+
+###  https://www.goudatijdmachine.nl/def#kadastraalPerceel
+gtm:kadastraalPerceel rdf:type owl:ObjectProperty ;
+                      o:property_id 1538 ;
+                      rdfs:label "Kadastraal perceel" .
+
+
+###  https://www.goudatijdmachine.nl/def#straatNaam
+gtm:straatNaam rdf:type owl:ObjectProperty ;
+               o:property_id 1354 ;
+               rdfs:comment "De naam waaronder de straat bekend is." ;
+               rdfs:label "Straatnaam" .
+
+
+###  https://www.goudatijdmachine.nl/def#verpondingsNummer
+gtm:verpondingsNummer rdf:type owl:ObjectProperty ;
+                      o:property_id 1364 ;
+                      rdfs:comment "Nummer van de verponding op een pand." ;
+                      rdfs:label "Verpondingsnummer" .
+
+
+###  https://www.goudatijdmachine.nl/def#wijk
+gtm:wijk rdf:type owl:ObjectProperty ;
+         o:property_id 1356 ;
+         rdfs:label "Wijk" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://omeka.org/s/vocabs/module/mapping#lat
+o-module-mapping:lat rdf:type owl:DatatypeProperty .
+
+
+###  http://omeka.org/s/vocabs/module/mapping#lng
+o-module-mapping:lng rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:DatatypeProperty ;
+                    o:property_id 4 ;
+                    rdfs:comment "An account of the resource." ;
+                    rdfs:label "Description" .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:DatatypeProperty ;
+                   o:property_id 10 ;
+                   rdfs:comment "An unambiguous reference to the resource within a given context." ;
+                   rdfs:label "Persistent identifier" .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:DatatypeProperty ;
+               o:property_id 11 ;
+               rdfs:comment "A related resource from which the described resource is derived." ;
+               rdfs:label "Source" .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:DatatypeProperty ;
+              o:property_id 1 ;
+              rdfs:comment "A name given to the resource." ;
+              rdfs:label "Title" .
+
+
+###  http://semanticweb.cs.vu.nl/2009/11/sem/hasEarliestBeginTimeStamp
+sem:hasEarliestBeginTimeStamp rdf:type owl:DatatypeProperty ;
+                              o:property_id 1101 ;
+                              rdfs:comment "Has earliest begin timestamp is used to indicate the earliest possible starting time of an uncertain time interval." ;
+                              rdfs:label "Has earliest begin timestamp" .
+
+
+###  http://semanticweb.cs.vu.nl/2009/11/sem/hasLatestEndTimeStamp
+sem:hasLatestEndTimeStamp rdf:type owl:DatatypeProperty ;
+                          o:property_id 1104 ;
+                          rdfs:comment "Has latest end timestamp is used to indicate the latest possible ending time of an uncertain time interval." ;
+                          rdfs:label "Has latest end timestamp" .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+geo:asWKT rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:DatatypeProperty ;
+              o:property_id 1109 ;
+              rdfs:comment "The range of skos:altLabel is the class of RDF plain literals." ;
+              rdfs:label "Alternative label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:DatatypeProperty ;
+               o:property_id 1108 ;
+               rdfs:comment "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag." ;
+               rdfs:label "Prefered label" .
+
+
+###  https://linkeddata.cultureelerfgoed.nl/def/ceo#huisnummer
+ceo:huisnummer rdf:type owl:DatatypeProperty ;
+               o:property_id 1493 ;
+               rdfs:comment "De property huisnummer wordt gebruikt om aan te geven het huisnummer, huisletter en huisnummer toevoeging van een cultuurhistorisch object." ;
+               rdfs:label "Huisnummer" .
+
+
+###  https://linkeddata.cultureelerfgoed.nl/def/ceo#kadastraleGemeentecode
+ceo:kadastraleGemeentecode rdf:type owl:DatatypeProperty ;
+                           o:property_id 1498 ;
+                           rdfs:comment "De property kadastraleGemeentecode is een registergegeven binnen de class Rijksmonument." ;
+                           rdfs:label "Kadastrale gemeentecode" .
+
+
+###  https://schema.org/description
+schema:description rdf:type owl:DatatypeProperty ;
+                   o:property_id 993 ;
+                   rdfs:comment "A description of the item." ;
+                   rdfs:label "Description" .
+
+
+###  https://schema.org/identifier
+schema:identifier rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            o:property_id 631 ;
+            rdfs:comment "The name of the item." ;
+            rdfs:label "Name" .
+
+
+###  https://schema.org/subjectOf
+schema:subjectOf rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:anyURI ;
+                 o:property_id 1533 ;
+                 rdfs:comment "A CreativeWork or Event about this Thing." ;
+                 rdfs:label "Subject of" .
+
+
+###  https://schema.org/temporalCoverage
+schema:temporalCoverage rdf:type owl:DatatypeProperty ;
+                        o:property_id 1051 ;
+                        rdfs:comment "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In    the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.    Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939/1945\". Open-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated." ;
+                        rdfs:label "Temporal coverage" .
+
+
+###  https://schema.org/yearBuilt
+schema:yearBuilt rdf:type owl:DatatypeProperty ;
+                 o:property_id 1365 ;
+                 rdfs:comment "Het jaar waarin het pand is gebouwd." ;
+                 rdfs:label "Bouwjaar" .
+
+
+###  https://www.goudatijdmachine.nl/def#adres
+gtm:adres rdf:type owl:DatatypeProperty ;
+          o:property_id 1369 ;
+          rdfs:comment "Straatnaam en huisnummer" ;
+          rdfs:label "Adres" .
+
+
+###  https://www.goudatijdmachine.nl/def#gebouwCategorie
+gtm:gebouwCategorie rdf:type owl:DatatypeProperty ;
+                    o:property_id 2059 ;
+                    rdfs:label "Gebouw categorie" .
+
+
+###  https://www.goudatijdmachine.nl/def#kadastraalNummer
+gtm:kadastraalNummer rdf:type owl:DatatypeProperty ;
+                     o:property_id 1363 ;
+                     rdfs:label "Kadastraal nummer" .
+
+
+###  https://www.goudatijdmachine.nl/def#kadastraleAanduiding
+gtm:kadastraleAanduiding rdf:type owl:DatatypeProperty ;
+                         o:property_id 1361 ;
+                         rdfs:comment "Aanduiding waaronder een perceel bekend is." ;
+                         rdfs:label "Kadastrale aanduiding" .
+
+
+###  https://www.goudatijdmachine.nl/def#kadastraleSectie
+gtm:kadastraleSectie rdf:type owl:DatatypeProperty ;
+                     o:property_id 1362 ;
+                     rdfs:label "Kadastrale sectie" .
+
+
+###  https://www.goudatijdmachine.nl/def#molenAandrijving
+gtm:molenAandrijving rdf:type owl:DatatypeProperty ;
+                     o:property_id 2055 ;
+                     rdfs:label "Molenaandrijving" .
+
+
+###  https://www.goudatijdmachine.nl/def#molenFunctie
+gtm:molenFunctie rdf:type owl:DatatypeProperty ;
+                 o:property_id 2056 ;
+                 rdfs:label "Functie molen" .
+
+
+###  https://www.goudatijdmachine.nl/def#molenType
+gtm:molenType rdf:type owl:DatatypeProperty ;
+              o:property_id 2054 ;
+              rdfs:label "Type molen" .
+
+
+###  https://www.goudatijdmachine.nl/def#perceelSoort
+gtm:perceelSoort rdf:type owl:DatatypeProperty ;
+                 o:property_id 1536 ;
+                 rdfs:comment "Typering van het perceel." ;
+                 rdfs:label "Perceelsoort" .
+
+
+###  https://www.goudatijdmachine.nl/def#sectie
+gtm:sectie rdf:type owl:DatatypeProperty ;
+           o:property_id 1367 ;
+           rdfs:label "Sectie" .
+
+
+###  https://www.goudatijdmachine.nl/def#status
+gtm:status rdf:type owl:DatatypeProperty ;
+           o:property_id 2057 ;
+           rdfs:label "Status" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://omeka.org/s/vocabs/module/mapping#Marker
+o-module-mapping:Marker rdf:type owl:Class .
+
+
+###  https://schema.org/Organization
+schema:Organization rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class .
+
+
+###  https://www.goudatijdmachine.nl/def#Brug
+gtm:Brug rdf:type owl:Class ;
+         rdfs:subClassOf gtm:Gebouw ;
+         rdfs:label "Brug" .
+
+
+###  https://www.goudatijdmachine.nl/def#Gebouw
+gtm:Gebouw rdf:type owl:Class ;
+           rdfs:label "Gebouw" .
+
+
+###  https://www.goudatijdmachine.nl/def#Gemaal
+gtm:Gemaal rdf:type owl:Class ;
+           rdfs:subClassOf gtm:Gebouw ;
+           rdfs:label "Gemaal" .
+
+
+###  https://www.goudatijdmachine.nl/def#Gevelsteen
+gtm:Gevelsteen rdf:type owl:Class ;
+               rdfs:comment "Eenstenen plaat of blok met een inscriptie en vaak een emblematische voorstelling in reliëf die de voorgevel van een gebouw siert. De gevelsteen verleent het gebouw een eigen, herkenbare identiteit. " ;
+               rdfs:label "Gevelsteen" .
+
+
+###  https://www.goudatijdmachine.nl/def#HistorischNaambord
+gtm:HistorischNaambord rdf:type owl:Class ;
+                       rdfs:label "Historisch naambord" .
+
+
+###  https://www.goudatijdmachine.nl/def#Hofstedegeld
+gtm:Hofstedegeld rdf:type owl:Class ;
+                 rdfs:comment "Steden in het middeleeuwse Holland ontstonden vaak op grond die het eigendom was van een stadsheer, de graaf of één van zijn leenmannen. Om de stedelijke ontwikkeling te bevorderen, gaf de stadsheer zijn grond uit in kleine percelen tegen een eeuwigdurende erfcijns, het hofstedengeld. Het ging daarbij om een klein bedragje, dat in de loop van de eeuwen ook niet werd aangepast. Hofstedengelden zijn daarom uitstekende gidsfossielen, die veel informatie verschaffen over de stedebouwkundige ontwikkelingen van historische stadskernen. Van de hofstedengelden werd administratie bijgehouden." ;
+                 rdfs:label "Hofstedegeld" .
+
+
+###  https://www.goudatijdmachine.nl/def#Molen
+gtm:Molen rdf:type owl:Class ;
+          rdfs:subClassOf gtm:Gebouw ;
+          rdfs:label "Molen" .
+
+
+###  https://www.goudatijdmachine.nl/def#Pand
+gtm:Pand rdf:type owl:Class ;
+         owl:disjointWith gtm:Perceel ;
+         rdfs:comment "Een gebouw waar je in kunt en dat je af kan sluiten." ;
+         rdfs:label "Pand" .
+
+
+###  https://www.goudatijdmachine.nl/def#Perceel
+gtm:Perceel rdf:type owl:Class ;
+            rdfs:comment "Een stuk grond waarvan de grenzen zijn gemeten en staan geregistreerd." ;
+            rdfs:label "Perceel" .
+
+
+###  https://www.goudatijdmachine.nl/def#PlaatselijkeAanduiding
+gtm:PlaatselijkeAanduiding rdf:type owl:Class ;
+                           rdfs:label "Plaatselijke aanduiding" .
+
+
+###  https://www.goudatijdmachine.nl/def#Sectie
+gtm:Sectie rdf:type owl:Class ;
+           rdfs:comment "Een onderdeel van een kadastrale gemeente. Een kadastrale sectie wordt aangeduid met één of twee hoofdletters. De kadastrale sectie is een onderdeel van de kadastrale aanduiding." ;
+           rdfs:label "Sectie" .
+
+
+###  https://www.goudatijdmachine.nl/def#Sluis
+gtm:Sluis rdf:type owl:Class ;
+          rdfs:label "Sluis" .
+
+
+###  https://www.goudatijdmachine.nl/def#Straat
+gtm:Straat rdf:type owl:Class ;
+           owl:disjointWith gtm:Wijk ;
+           rdfs:comment "De wegverharding tussen de huizen in een bewoonde plaats." ;
+           rdfs:label "Straat" .
+
+
+###  https://www.goudatijdmachine.nl/def#Verponding
+gtm:Verponding rdf:type owl:Class ;
+               rdfs:comment "De verponding was een vorm van grondbelasting, die tussen de 17e eeuw en 19e eeuw in Nederland werd geheven. Op 1 oktober 1832 werd de verponding opgevolgd door de invoering van de grondbelasting die op het kadaster was gebaseerd. De gegevens die nodig waren om de hoeveelheid te betalen verponding voor een bepaalde eigenaar van onroerend goed uit te rekenen, werden opgetekend in zogenaamde verpondingskohieren. De kohieren waren gebaseerd op maatboeken." ;
+               rdfs:label "Verponding" .
+
+
+###  https://www.goudatijdmachine.nl/def#Waterloop
+gtm:Waterloop rdf:type owl:Class ;
+              rdfs:label "Waterloop" .
+
+
+###  https://www.goudatijdmachine.nl/def#Wijk
+gtm:Wijk rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://n2t.net/ark:/60537/by6gvD
+<https://n2t.net/ark:/60537/by6gvD> rdf:type owl:NamedIndividual ,
+                                             schema:Organization ;
+                                    schema:description "Een tijdmachine die de bebouwing van de historische binnenstad van Gouda onderzoekt, digitaal vastlegt en prachtig weergeeft. De Gouda Tijdmachine is een initatief van historische vereniging Die Goude en Streekarchief Midden-Holland." ;
+                                    schema:name "Gouda Tijdmachine" ;
+                                    schema:alternateName "GTM" ;
+                                    schema:url <https://www.goudatijdmachine.nl> .
+
+
+###  https://orcid.org/0000-0002-7328-1312
+<https://orcid.org/0000-0002-7328-1312> rdf:type owl:NamedIndividual ,
+                                                 schema:Person ;
+                                        schema:name "Bob Coret"@en ;
+                                        schema:affiliation <https://n2t.net/ark:/60537/by6gvD> ;
+                                        schema:identifier <https://orcid.org/0000-0002-7328-1312> .
+
+
+[ rdf:type schema:Organization ;
+  schema:description "Een tijdmachine die de bebouwing van de historische binnenstad van Gouda onderzoekt, digitaal vastlegt en prachtig weergeeft. De Gouda Tijdmachine is een initatief van historische vereniging Die Goude en Streekarchief Midden-Holland." ;
+  schema:name "Gouda Tijdmachine" ;
+  schema:alternateName "GTM" ;
+  schema:identifier <https://n2t.net/ark:/60537/by6gvD> ;
+  schema:url <https://www.goudatijdmachine.nl>
+] .
+
+[ rdf:type schema:Person ;
+   schema:name "Bob Coret"@en ;
+   schema:affiliation <https://n2t.net/ark:/60537/by6gvD> ;
+   schema:identifier <https://orcid.org/0000-0002-7328-1312>
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+schema:identifier rdfs:comment "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details." ;
+                   rdfs:label "Identifier" ;
+                   o:property_id 1082 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
